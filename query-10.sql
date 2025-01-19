@@ -1,0 +1,10 @@
+SELECT
+  DISTINCT(ACTOR.name) AS actor_name
+FROM
+  ACTOR
+  INNER JOIN MOVIE_CAST ON MOVIE_CAST.actor_id = ACTOR.id
+  INNER JOIN MOVIE ON MOVIE.id = MOVIE_CAST.movie_id
+WHERE
+  MOVIE.name LIKE "%Harry Potter%"
+ORDER BY
+  ACTOR.name ASC;
